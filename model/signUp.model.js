@@ -49,10 +49,11 @@ signupSchema.pre("save", async function (req, res, next) {
     user.confirmPassword = undefined;
 
     next();
-    
   } catch (error) {
-    console.log(error)
-   
+    res.send({
+      message: "Error",
+      error: error.message,
+    });
   }
 });
 

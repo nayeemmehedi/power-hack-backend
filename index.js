@@ -30,11 +30,13 @@ main()
   .then(() => console.log("connect successfully.."))
   .catch((err) => console.log(err));
 
-app.use("/api", powerHack);
-app.use('/',(req,res)=>{
-  res.send("hello world")
+  // app.use('/',(req,res)=>{
+  //   res.send("Welcome power hack")
+  
+  // })
 
-})
+app.use("/api", powerHack);
+
 
 app.use("/api/signup",signUp)
 app.use("/api/login",login)
