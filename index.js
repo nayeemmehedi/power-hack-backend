@@ -17,7 +17,7 @@ mongoose.set("strictQuery", false);
 
 async function main() {
   const uri =
-    "mongodb+srv://connect-db:1xp5KCxVCGVC2QgE@cluster0.teacx.mongodb.net/power-hack";
+    `mongodb+srv://${process.env.MONGO_CN}:${process.env.MONGO_PW}@cluster0.teacx.mongodb.net/${process.env.MONGO_DB}`;
   await mongoose.connect(uri);
 
   // await mongoose.connect("mongodb+srv://connect-db:1xp5KCxVCGVC2QgE@cluster0.teacx.mongodb.net/multerLearning");
